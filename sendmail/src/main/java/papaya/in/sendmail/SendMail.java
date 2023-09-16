@@ -49,8 +49,8 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
         // Sender's email ID needs to be mentioned
        // String from = "parktownmedical@gmail.com";
 
-       // final String username = "parktownmedical";//change accordingly
-        //final String password = "whvn nwob foug ohly";//change accordingly
+        final String username = "parktownmedical";//change accordingly
+        final String password = "whvn nwob foug ohly";//change accordingly
 
         // Assuming you are sending email through relay.jangosmtp.net
         String host = "smtp.gmail.com";
@@ -67,7 +67,7 @@ public class SendMail extends AsyncTask<Void, Void, Void> {
         Session session = Session.getInstance(props,
                 new javax.mail.Authenticator() {
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(senderEmail, senderPass);
+                        return new PasswordAuthentication(username, password);
                     }
                 });
 
